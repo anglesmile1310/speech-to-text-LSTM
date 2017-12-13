@@ -101,3 +101,5 @@ ENV/
 .mypy_cache/
 
 LibriSpeech/
+model/
+data_generation-copy.py

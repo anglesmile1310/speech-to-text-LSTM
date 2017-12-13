@@ -9,8 +9,15 @@ hidden_neurons = 300
 
 # Sequential model is a linear stack of layers.
 model = Sequential()
-
-model.add(LSTM(hidden_neurons, return_sequences=False, input_shape=(None, in_out_neurons)))
+""" 
+    Add LSTM layer with input:
+        
+"""
+model.add(
+    LSTM(
+        hidden_neurons,
+        return_sequences=False,
+        input_shape=(None, in_out_neurons)))
 model.add(Dense(in_out_neurons, input_dim=hidden_neurons))
 model.add(Activation("linear"))
 

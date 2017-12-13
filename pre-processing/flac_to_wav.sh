@@ -1,10 +1,10 @@
-#convert .flac to .wav
-#References from lucko515/speech-recognition-neural-network
-#Link: https://github.com/lucko515/speech-recognition-neural-network/blob/master/
+# convert .flac to .wav
+# References from baidu-research/ba-dls-deepspeech
+# Link: https://github.com/baidu-research/ba-dls-deepspeech
 
-#find from local directory
-#Find file base on file name, with form "*.flac"
-#wc - print newline, word, and byte counts for each file [Ubuntu manpages]
+# find from local directory
+# Find file base on file name, with form "*.flac"
+# wc - print newline, word, and byte counts for each file [Ubuntu manpages]
 
 find ../. -iname "*.flac" | wc
 
