@@ -25,17 +25,17 @@ def simple_lstm_model(input_dim, units, activation, output_dim=29):
     """
     bn_rnn = BatchNormalization(name='bn_rnn_1d')(lstm)
 
-    """
-    TODO: Add Time dense
-        Time dense:
-    """
-    time_dense = TimeDistributed(Dense(output_dim))(bn_rnn)
+    # """
+    # TODO: Add Time dense
+    #     Time dense:
+    # """
+    # time_dense = TimeDistributed(Dense(output_dim))(bn_rnn)
 
     """
     TODO: Add activation
         'softmax' func:  
     """
-    y_pred = Activation('softmax',name='activation')(time_dense)
+    y_pred = Activation('softmax')(bn_rnn)
 
     model = Model(inputs=input_data, outputs=y_pred)
     model.output_length = lambda x: x
