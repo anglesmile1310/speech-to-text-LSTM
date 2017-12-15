@@ -1,11 +1,6 @@
 """
 Defines a class that is used to featurize audio clips, and provide
 them to the network for training or testing.
-
-Reference: lucko515/speech-recognition-neural-network
-Link: https://github.com/lucko515/speech-recognition-neural-network/blob/master/data_generator.py
-
-Edited by Thanh Ho Quang
 """
 
 import json
@@ -349,4 +344,18 @@ def plot_mfcc_feature(vis_mfcc_feature):
     plt.colorbar(im, cax=cax)
     ax.set_xticks(
         np.arange(0, 13, 2), minor=False)
+    plt.show()
+
+
+def plot_spectrogram_feature(vis_spectrogram_feature):
+    # plot the normalized spectrogram
+    fig = plt.figure(figsize=(12, 5))
+    ax = fig.add_subplot(111)
+    im = ax.imshow(vis_spectrogram_feature, cmap=plt.cm.jet, aspect='auto')
+    plt.title('Normalized Spectrogram')
+    plt.ylabel('Time')
+    plt.xlabel('Frequency')
+    divider = make_axes_locatable(ax)
+    cax = divider.append_axes("right", size="5%", pad=0.05)
+    plt.colorbar(im, cax=cax)
     plt.show()
