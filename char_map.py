@@ -1,5 +1,5 @@
-# Reference from repo:speech-recognition-neural-network
-# https://github.com/lucko515/speech-recognition-neural-network/blob/master/char_map.py
+# Reference from repo:baidu-research/ba-dls-deepspeech
+# https://github.com/baidu-research/ba-dls-deepspeech/blob/master/char_map.py
 
 char_map_str = """
 ' 0
@@ -38,5 +38,5 @@ index_map = {}
 for line in char_map_str.strip().split('\n'):
     ch, index = line.split()
     char_map[ch] = int(index)
-    index_map[int(index)+1] = ch
+    index_map[int(index) + 1] = ch
 index_map[2] = ' '
